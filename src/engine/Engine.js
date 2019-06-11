@@ -1,9 +1,9 @@
-import { WIDTH, HEIGHT } from "../constants/GAME";
+import { WIDTH, HEIGHT } from '../constants/GAME'
 
 export default class Engine {
   constructor() {
-    this.canvas = document.createElement('canvas');
-    this.ctx = this.canvas.getContext('2d');
+    this.canvas = document.createElement('canvas')
+    this.ctx = this.canvas.getContext('2d')
     document.body.append(this.canvas)
     this.canvas.width = WIDTH
     this.canvas.height = HEIGHT
@@ -16,9 +16,9 @@ export default class Engine {
 
   addPlayer = (player) => {
     if (!this.player) {
-      this.player = player;
+      this.player = player
     } else {
-      throw ("Error: Player was already added")
+      throw ('Error: Player was already added')
     }
   }
 
@@ -31,11 +31,11 @@ export default class Engine {
   }
 
   addCollisionTag = (tag) => {
-    this.collisionTags.push(tag);
+    this.collisionTags.push(tag)
   }
 
   removeCollisionTag = (tag) => {
-    this.collisionTags = this.collisionTags.filter(tagObj => tagObj !== tag);
+    this.collisionTags = this.collisionTags.filter(tagObj => tagObj !== tag)
   }
 
   update = () => {
@@ -47,12 +47,12 @@ export default class Engine {
     //Clear the whole canvas on each frame
     //Without this each time you move a game object it will 
     //be duplicated instead
-    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
 
     //Draw every floor tile
     //Tiles are not considered for collisions to avoid unnecessary 
     //computing power
-    this.floor.forEach(tile => tile.draw());
+    this.floor.forEach(tile => tile.draw())
 
     //Draw every game object
     this.gameObjects.forEach(obj => obj.draw())

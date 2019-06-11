@@ -1,6 +1,6 @@
-import GameObject from "../GameObject";
-import InputHandler from "../components/InputHandler";
-import Collider from "../components/Collider";
+import GameObject from '../GameObject'
+import InputHandler from '../components/InputHandler'
+import Collider from '../components/Collider'
 
 export default class Player extends GameObject {
   constructor(engine, x, y, color, sprite, animation) {
